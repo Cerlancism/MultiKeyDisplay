@@ -29,6 +29,7 @@ $(function() {
     let fResult = false;
     HideHintUserToType();
     if (GetKeyOverlay(keyCode) === null) {
+      
       let rgKey = GetKey(keyCode);
       let pxDefaultKeyWidth = Number(imgKeyboard.naturalWidth) / oKeyboard.Width;
       let pxDefaultKeyHeight = Number(imgKeyboard.naturalHeight) / oKeyboard.Height;
@@ -40,6 +41,7 @@ $(function() {
         }else{
           AppendOverlayAtLocation(keyCode, pxDefaultKeyWidth, pxDefaultKeyHeight, rgKey[1], rgKey[2], rgKey[3], rgKey[4]);
         }
+        console.log("down", keyCode);
         fResult = true;
       }
     }
@@ -71,6 +73,7 @@ $(function() {
           GetKeyOverlay(keyCode).remove();
         }
       }
+      console.log("up", keyCode);
       fResult = true;
     }
     return fResult;
